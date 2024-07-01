@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors());
 
 // Use router
-app.use("/api", router)
+app.use("/api/v1", router)
 
 const TestingRouteController = async (req: Request, res: Response) => {
   res.status(200).json({

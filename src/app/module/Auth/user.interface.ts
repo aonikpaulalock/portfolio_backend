@@ -2,11 +2,6 @@
 import { Model } from "mongoose";
 import { USER_ROLE } from "./user.constant";
 
-export type TPasswordHistory = {
-  password: string;
-  changeAt: Date
-}[]
-
 // User Model
 export interface TUser {
   _id: string;
@@ -14,7 +9,6 @@ export interface TUser {
   email: string;
   password: string;
   role: 'user' | 'admin';
-  historyOfPassword?: TPasswordHistory
 }
 
 export type TUserRole = keyof typeof USER_ROLE

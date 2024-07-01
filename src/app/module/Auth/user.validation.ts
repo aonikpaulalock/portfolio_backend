@@ -22,13 +22,13 @@ const loginUserValidation = z.object({
   password: passwordValidationSchema,
 })
 
-const changePasswordValidation = z.object({
-  currentPassword: passwordValidationSchema,
-  newPassword: passwordValidationSchema,
-})
+// const changePasswordValidation = z.object({
+//   currentPassword: passwordValidationSchema,
+//   newPassword: passwordValidationSchema,
+// })
 
 export const UserValidations = {
   createUserValidation,
   loginUserValidation,
-  changePasswordValidation
+  // changePasswordValidation
 }

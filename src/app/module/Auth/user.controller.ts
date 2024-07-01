@@ -28,19 +28,19 @@ const loginUser = CatchAsyncPromise(
   }
 )
 
-const changePassword = CatchAsyncPromise(
-  async (req, res, next) => {
-    const userId = req.userPayload._id
-    const result = await UserServices.changePasswordIntoDB(userId, req.body)
+// const changePassword = CatchAsyncPromise(
+//   async (req, res, next) => {
+//     const userId = req.userPayload._id
+//     const result = await UserServices.changePasswordIntoDB(userId, req.body)
     
-    ResponseSend(res, {
-      success: true,
-      statusCode: httpStatus.OK,
-      message: "Password changed successfully",
-      data: result
-    })
-  }
-)
+//     ResponseSend(res, {
+//       success: true,
+//       statusCode: httpStatus.OK,
+//       message: "Password changed successfully",
+//       data: result
+//     })
+//   }
+// )
 
 
 
@@ -61,5 +61,5 @@ export const UserControllers = {
   createUser,
   loginUser,
   getAllUser,
-  changePassword
+  // changePassword
 }

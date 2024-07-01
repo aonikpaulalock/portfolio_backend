@@ -23,13 +23,13 @@ router
   )
 
   //! Change passoword Login
-  .post("/change-password",
-    auth("user", "admin"),
-    ValidationRequestSchema(
-      UserValidations.changePasswordValidation
-    ),
-    UserControllers.changePassword
-  )
+  // .post("/change-password",
+  //   auth("user", "admin"),
+  //   ValidationRequestSchema(
+  //     UserValidations.changePasswordValidation
+  //   ),
+  //   UserControllers.changePassword
+  // )
 
   //! Get All User
   .get("/", auth("admin"), UserControllers.getAllUser)
