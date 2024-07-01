@@ -41,8 +41,8 @@ UserSchema.pre('save', async function (next) {
 
 
 //! Is User Exists
-UserSchema.statics.isUserExists = async function (username) {
-  return await User.findOne({ username })
+UserSchema.statics.isUserExists = async function (email) {
+  return await User.findOne({ email })
 }
 
 //! compare password body and datebase
@@ -54,7 +54,6 @@ UserSchema.statics.isPasswordMatch = async function (textPassword, hashPassword)
 UserSchema.methods.toJSON = function () {
   const cloneObj = this.toObject();
   delete cloneObj.password;
-  delete cloneObj.historyOfPassword;
   return cloneObj;
 };
 

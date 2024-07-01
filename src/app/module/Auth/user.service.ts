@@ -15,15 +15,15 @@ const createUserIntoDB = async (payload: TUser) => {
 const loginUserIntoDB = async (
   payload:
     {
-      username: string,
+      email: string,
       password: string
     }
 ) => {
 
-  const { username, password } = payload;
+  const { email, password } = payload;
 
   //! If User Exists in database
-  const user = await User.isUserExists(username as string)
+  const user = await User.isUserExists(email as string)
   if (!user) {
     throw new AppError(httpStatus.NOT_FOUND, "User not found")
   }
@@ -50,7 +50,6 @@ const loginUserIntoDB = async (
     config.jwt_access_token_expire as string
   );
   return {
-    user,
     accessToken
   }
 }

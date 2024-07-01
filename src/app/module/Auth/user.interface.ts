@@ -17,5 +17,5 @@ export type TUserRole = keyof typeof USER_ROLE
 export interface UserModel extends Model<TUser> {
   validatePassword(password: string): Promise<boolean>
   isPasswordMatch(textPassword: string, hashPassord: string): Promise<boolean>
-  isUserExists(userName: string): Promise<TUser>
+  isUserExists(email: string): Promise<TUser>
 }
