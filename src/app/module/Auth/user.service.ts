@@ -38,8 +38,8 @@ const loginUserIntoDB = async (
 
   //! Create Jwt Payload
   const secretPayload = {
-    _id: user?._id, // User's _id
-    role: user?.role,               // User's role
+    _id: user?._id,
+    role: user?.role,
     email: user?.email,
   }
 
@@ -50,6 +50,7 @@ const loginUserIntoDB = async (
     config.jwt_access_token_expire as string
   );
   return {
+    user,
     accessToken
   }
 }
